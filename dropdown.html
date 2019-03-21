@@ -1,0 +1,141 @@
+<style>
+    .freezer_toggle_wrapper {
+        
+    }
+
+    #freezer_wrap, #shelf_wrap, #rack_wrap, #box_wrap {
+        margin-top: 0px;
+        margin-bottom: 30px;
+        background: #f2f7f7;
+        border: solid 2px lightgray;
+        width: auto;
+        height: 50px;
+        margin: 0px 10px 0px 10px;
+        padding: 10px;
+    }
+
+    #freezer_wrap_toggle, #shelf_wrap_toggle, #rack_wrap_toggle, #box_wrap_toggle {
+        display: block;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        background: #0a4a5e;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-variant: small-caps;
+        box-shadow: 2px 2px 3px #888888;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    #freezer_wrap_toggle:hover, #shelf_wrap_toggle:hover, #rack_wrap_toggle:hover, #box_wrap_toggle:hover {
+        text-decoration: none;
+        border-top: 1px groove white;
+        border-left: 1px groove white;
+        border-bottom: 1px solid #7B7B78;
+        border-right: 1px solid #7B7B78;
+        color: white;
+        background: #0d627a;
+        box-shadow: 1px 1px 2px #888888;
+    }
+
+</style>
+
+<html>
+
+    <head>
+        <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <script>
+            jQuery(document).ready(function ($) {
+
+                $("#freezer_wrap_toggle").click(function () {
+
+                    $("#freezer_wrap").slideToggle(400);
+
+                    if ($("#freezer_wrap_toggle").text() == "Freezer") {
+                        $("#freezer_wrap_toggle").html("Freezer" + " (open)")
+                    } else {
+                        $("#freezer_wrap_toggle").text("Freezer")
+                    }
+
+                });
+
+                $("#shelf_wrap_toggle").click(function () {
+
+                    $("#shelf_wrap").slideToggle(400);
+
+                    if ($("#shelf_wrap_toggle").text() == "Shelf") {
+                        $("#shelf_wrap_toggle").html("Shelf"+ " (open)")
+                    } else {
+                        $("#shelf_wrap_toggle").text("Shelf")
+                    }
+
+                });
+
+                $("#rack_wrap_toggle").click(function () {
+
+    $("#rack_wrap").slideToggle(400);
+
+    if ($("#rack_wrap_toggle").text() == "Rack") {
+        $("#rack_wrap_toggle").html("Rack"+" (open)")
+    } else {
+        $("#rack_wrap_toggle").text("Rack")
+    }
+
+    });
+
+    $("#box_wrap_toggle").click(function () {
+
+    $("#box_wrap").slideToggle(400);
+
+    if ($("#box_wrap_toggle").text() == "Box") {
+        $("#box_wrap_toggle").html("Box"+" (open)")
+    } else {
+        $("#box_wrap_toggle").text("Box")
+    }
+
+    });
+
+            });
+        </script>
+        <div class="freezer_toggle_wrapper">
+            <a href="#0" id="freezer_wrap_toggle">Freezer</a>
+        </div>
+        <div id="freezer_wrap" style="display: none;">
+            Shelves go here
+            <div class="shelf_toggle_wrapper">
+                <a href="#0" id="shelf_wrap_toggle">Shelf</a>
+            </div>
+            <div id="shelf_wrap" style="display: none;">
+                Racks go here
+                <div class="rack_toggle_wrapper">
+                        <a href="#0" id="rack_wrap_toggle">Rack</a>
+                    </div>
+                    <div id="rack_wrap" style="display: none;">
+                        Boxes go here
+                        <div class="box_toggle_wrapper">
+                                <a href="#0" id="box_wrap_toggle">Box</a>
+                            </div>
+                            <div id="box_wrap" style="display: none;">
+                                Samples go here
+                            </div>
+                        
+                    </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
+
+<!-- <div class="box_toggle_wrapper">
+        <a href="#0" id="box_wrap_toggle">Expand box Details</a>
+    </div>
+    <div id="box_wrap" style="display: none;">
+        Sample content is here
+    </div> -->
